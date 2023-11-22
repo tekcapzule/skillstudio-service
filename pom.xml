@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tekcapzule</groupId>
-    <artifactId>course-application</artifactId>
+    <artifactId>learningMaterial-application</artifactId>
     <version>1.0.5</version>
     <packaging>pom</packaging>
-    <name>Course Application</name>
-    <description>Course Application</description>
+    <name>SkillStudio Application</name>
+    <description>SkillStudio Application</description>
     <properties>
         <sonar.organization>tekcapzule</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -29,9 +29,9 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>course</id>
+            <id>learningMaterial</id>
             <name>GitHub TekCapzule Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/tekcapzule/course-service</url>
+            <url>https://maven.pkg.github.com/tekcapzule/learningMaterial-service</url>
         </repository>
     </distributionManagement>
 </project>

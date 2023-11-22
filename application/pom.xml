@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tekcapzule</groupId>
-    <artifactId>course-service</artifactId>
+    <artifactId>learningMaterial-service</artifactId>
     <version>1.0.5</version>
-    <name>Course Service</name>
-    <description>Course Service</description>
+    <name>SkillStudio Service</name>
+    <description>SkillStudio Service</description>
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>com.tekcapzule</groupId>
-            <artifactId>course-domain</artifactId>
+            <artifactId>learningMaterial-domain</artifactId>
             <version>1.0.5</version>
         </dependency>
         <dependency>
@@ -115,9 +115,9 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>course</id>
+            <id>learningMaterial</id>
             <name>GitHub TekCapzule Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/tekcapzule/course-service</url>
+            <url>https://maven.pkg.github.com/tekcapzule/learningMaterial-service</url>
         </repository>
     </distributionManagement>
 </project>

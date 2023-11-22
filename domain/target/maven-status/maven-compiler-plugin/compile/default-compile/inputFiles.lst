@@ -1,0 +1,15 @@
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/repository/SkillStudioDynamoRepository.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/PrizingModel.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/service/SkillStudioService.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/repository/SkillStudioRepository.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/service/SkillStudioServiceImpl.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/Module.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/LearningMode.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/LearningMaterial.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/DeliveryMode.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/Promotion.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/command/UpdateCommand.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/command/ApproveCommand.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/model/Status.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/command/RecommendCommand.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapzule/skillstudio-service/domain/src/main/java/com/tekcapzule/skillstudio/domain/command/CreateCommand.java

@@ -55,7 +55,7 @@ Resources:
     Properties:
       TableName: !Sub "${Stage}SkillStudio"
       AttributeDefinitions:
-        - AttributeName: skillstudioId
+        - AttributeName: learningMaterialId
           AttributeType: S
         - AttributeName: topicCode
           AttributeType: S
@@ -64,7 +64,7 @@ Resources:
         - AttributeName: recommendations
           AttributeType: N
       KeySchema:
-        - AttributeName: skillstudioId
+        - AttributeName: learningMaterialId
           KeyType: HASH
       ProvisionedThroughput:
         ReadCapacityUnits: 1

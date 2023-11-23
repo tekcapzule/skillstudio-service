@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Event {
+public class Event extends LearningData {
 
     @DynamoDBAttribute(attributeName = "eventSchedule")
     private EventSchedule eventSchedule;

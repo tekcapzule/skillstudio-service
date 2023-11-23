@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course  {
+public class Course extends LearningData {
 
     @DynamoDBAttribute(attributeName = "modules")
     private List<Module> modules;

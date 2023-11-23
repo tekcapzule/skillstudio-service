@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Tekbyte  {
+public class Tekbyte extends LearningData {
     @DynamoDBAttribute(attributeName = "illustrationUrl")
     private String illustrationUrl;
     @DynamoDBAttribute(attributeName = "goldenCircle")

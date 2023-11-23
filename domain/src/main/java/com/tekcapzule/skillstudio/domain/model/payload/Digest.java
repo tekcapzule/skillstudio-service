@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Digest {
+public class Digest extends LearningData{
     @DynamoDBAttribute(attributeName = "digestType")
     @DynamoDBTypeConvertedEnum
     private DigestType digestType;

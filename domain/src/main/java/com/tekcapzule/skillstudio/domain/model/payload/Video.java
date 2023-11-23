@@ -6,6 +6,6 @@ import lombok.*;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
-public class Video {
+public class Video extends LearningData{
 }
 

@@ -6,7 +6,7 @@ import lombok.*;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ResearchPaper  {
+public class ResearchPaper extends LearningData {
 
 }
 

@@ -1,8 +1,11 @@
-package com.tekcapzule.skillstudio.domain.model;
+package com.tekcapzule.skillstudio.domain.model.payload;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -10,8 +13,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @DynamoDBDocument
-public class Module {
+public class Concept {
     private String title;
-    private int duration;
     private String description;
+
 }

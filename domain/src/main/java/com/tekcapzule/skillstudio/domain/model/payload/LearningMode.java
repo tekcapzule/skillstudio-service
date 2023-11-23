@@ -1,4 +1,4 @@
-package com.tekcapzule.skillstudio.domain.model;
+package com.tekcapzule.skillstudio.domain.model.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

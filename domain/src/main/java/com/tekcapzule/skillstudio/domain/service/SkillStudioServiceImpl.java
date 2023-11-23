@@ -30,16 +30,16 @@ public class SkillStudioServiceImpl implements SkillStudioService {
         LearningMaterial learningMaterial = LearningMaterial.builder()
                 .title(createCommand.getTitle())
                 .topicCode(createCommand.getTopicCode())
-                .author(createCommand.getAuthor())
+                //.author(createCommand.getAuthor())
                 .publisher(createCommand.getPublisher())
                 .duration(createCommand.getDuration())
                 .resourceUrl(createCommand.getResourceUrl())
                 .summary(createCommand.getSummary())
                 .description(createCommand.getDescription())
-                .modules(createCommand.getModules())
-                .prizingModel(createCommand.getPrizingModel())
-                .deliveryMode(createCommand.getDeliveryMode())
-                .learningMode(createCommand.getLearningMode())
+                //.modules(createCommand.getModules())
+                //.prizingModel(createCommand.getPrizingModel())
+                //.deliveryMode(createCommand.getDeliveryMode())
+                //.learningMode(createCommand.getLearningMode())
                 .imageUrl(createCommand.getImageUrl())
                 .promotion(createCommand.getPromotion())
                 .status(Status.SUBMITTED)
@@ -62,15 +62,15 @@ public class SkillStudioServiceImpl implements SkillStudioService {
         if (learningMaterial != null) {
             learningMaterial.setTitle(updateCommand.getTitle());
             learningMaterial.setTopicCode(updateCommand.getTopicCode());
-            learningMaterial.setAuthor(updateCommand.getAuthor());
+            //learningMaterial.setAuthor(updateCommand.getAuthor());
             learningMaterial.setPublisher(updateCommand.getPublisher());
             learningMaterial.setDuration(updateCommand.getDuration());
             learningMaterial.setResourceUrl(updateCommand.getResourceUrl());
             learningMaterial.setSummary(updateCommand.getSummary());
             learningMaterial.setDescription(updateCommand.getDescription());
-            learningMaterial.setModules(updateCommand.getModules());
-            learningMaterial.setPrizingModel(updateCommand.getPrizingModel());
-            learningMaterial.setDeliveryMode(updateCommand.getDeliveryMode());
+            //learningMaterial.setModules(updateCommand.getModules());
+            //learningMaterial.setPrizingModel(updateCommand.getPrizingModel());
+            //learningMaterial.setDeliveryMode(updateCommand.getDeliveryMode());
             learningMaterial.setLearningMode(updateCommand.getLearningMode());
             learningMaterial.setPromotion(updateCommand.getPromotion());
             learningMaterial.setImageUrl(updateCommand.getImageUrl());

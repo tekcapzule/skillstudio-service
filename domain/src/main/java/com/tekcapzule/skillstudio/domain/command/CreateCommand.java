@@ -3,8 +3,9 @@ package com.tekcapzule.skillstudio.domain.command;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.Command;
 import com.tekcapzule.skillstudio.domain.model.*;
-import com.tekcapzule.skillstudio.domain.model.*;
-import com.tekcapzule.skillstudio.domain.model.Module;
+import com.tekcapzule.skillstudio.domain.model.payload.Module;
+import com.tekcapzule.skillstudio.domain.model.payload.DeliveryMode;
+import com.tekcapzule.skillstudio.domain.model.payload.LearningMode;
 import lombok.Builder;
 import lombok.Data;
 

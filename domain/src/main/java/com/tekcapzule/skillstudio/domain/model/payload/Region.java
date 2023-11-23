@@ -1,0 +1,15 @@
+package com.tekcapzule.skillstudio.domain.model.payload;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+public enum Region {
+    AMERICAS("Americas"),
+    EUROPE("Europe"),
+    MIDDLE_EAST_AFRICA("Middle East & Africa"),
+    ASIA_ASIAPACIFIC("Asia & Asia Pacific");
+
+    @Getter
+    private String value;
+}

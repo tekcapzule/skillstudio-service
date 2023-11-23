@@ -23,6 +23,8 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private String learningMaterialId;
     @DynamoDBAttribute(attributeName = "topicCode")
     private String topicCode;
+    @DynamoDBAttribute(attributeName = "subTopicCode")
+    private String subTopicCode;
     @DynamoDBAttribute(attributeName = "title")
     private String title;
     @DynamoDBAttribute(attributeName = "summary")

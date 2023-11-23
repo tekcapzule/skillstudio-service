@@ -2,8 +2,6 @@ package com.tekcapzule.skillstudio.domain.model.payload;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.tekcapzule.core.domain.AggregateRoot;
-import com.tekcapzule.core.domain.BaseDomainEntity;
 import lombok.*;
 
 import java.util.List;

@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tekcapzule</groupId>
-    <artifactId>learningMaterial-service</artifactId>
+    <artifactId>skillstudio-service</artifactId>
     <version>1.0.5</version>
     <name>SkillStudio Service</name>
     <description>SkillStudio Service</description>
@@ -53,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>com.tekcapzule</groupId>
-            <artifactId>learningMaterial-domain</artifactId>
+            <artifactId>skillstudio-domain</artifactId>
             <version>1.0.5</version>
         </dependency>
         <dependency>
@@ -115,9 +115,9 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>learningMaterial</id>
+            <id>skillstudio</id>
             <name>GitHub TekCapzule Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/tekcapzule/learningMaterial-service</url>
+            <url>https://maven.pkg.github.com/tekcapzule/skillstudio-service</url>
         </repository>
     </distributionManagement>
 </project>

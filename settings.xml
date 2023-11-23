@@ -18,8 +18,8 @@
                     </snapshots>
                 </repository>
                 <repository>
-                    <id>learningMaterial</id>
-                    <url>https://maven.pkg.github.com/tekcapzule/learningMaterial-service</url>
+                    <id>skillstudio</id>
+                    <url>https://maven.pkg.github.com/tekcapzule/skillstudio-service</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>

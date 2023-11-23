@@ -29,9 +29,9 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>learningMaterial</id>
+            <id>skillstudio</id>
             <name>GitHub TekCapzule Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/tekcapzule/learningMaterial-service</url>
+            <url>https://maven.pkg.github.com/tekcapzule/skillstudio-service</url>
         </repository>
     </distributionManagement>
 </project>

@@ -3,11 +3,12 @@ package com.tekcapzule.skillstudio.domain.model.payload;
 import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course extends LearningData {

@@ -12,8 +12,8 @@ import lombok.*;
 @NoArgsConstructor
 public class Event {
 
-    @DynamoDBAttribute(attributeName = "schedule")
-    private Schedule schedule;
+    @DynamoDBAttribute(attributeName = "eventSchedule")
+    private EventSchedule eventSchedule;
     @DynamoDBAttribute(attributeName = "pastPopularEvent")
     private Boolean pastPopularEvent;
     @DynamoDBAttribute(attributeName = "region")

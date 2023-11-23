@@ -17,8 +17,6 @@ import java.util.List;
 public class Tekbyte  {
     @DynamoDBAttribute(attributeName = "illustrationUrl")
     private String illustrationUrl;
-    @DynamoDBAttribute(attributeName = "aliases")
-    private List<String> aliases;
     @DynamoDBAttribute(attributeName = "goldenCircle")
     private GoldenCircle goldenCircle;
     @DynamoDBAttribute(attributeName = "keyConcepts")

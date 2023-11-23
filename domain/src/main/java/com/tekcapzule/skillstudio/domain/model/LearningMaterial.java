@@ -4,7 +4,6 @@ import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.AggregateRoot;
 import com.tekcapzule.core.domain.BaseDomainEntity;
-import com.tekcapzule.skillstudio.domain.model.payload.LearningMode;
 import lombok.*;
 
 import java.util.List;
@@ -33,26 +32,26 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private String description;
     @DynamoDBAttribute(attributeName = "publisher")
     private String publisher;
-    @DynamoDBAttribute(attributeName = "duration")
-    private String duration;
-    @DynamoDBAttribute(attributeName = "resourceUrl")
-    private String resourceUrl;
-    @DynamoDBAttribute(attributeName = "prizingModel")
-    @DynamoDBTypeConvertedEnum
-    private LearningMode learningMode;
-    @DynamoDBAttribute(attributeName = "imageUrl")
-    private String imageUrl;
-    @DynamoDBAttribute(attributeName = "promotion")
-    private Promotion promotion;
-    @DynamoDBTypeConvertedJson
-    @DynamoDBAttribute(attributeName = "recommendations")
-    private int recommendations;
     @DynamoDBAttribute(attributeName = "publishedOn")
     private String publishedOn;
     @DynamoDBAttribute(attributeName = "authors")
     private List<String> authors;
     @DynamoDBAttribute(attributeName = "tags")
     private List<String> tags;
+    @DynamoDBAttribute(attributeName = "duration")
+    private String duration;
+    @DynamoDBAttribute(attributeName = "resourceUrl")
+    private String resourceUrl;
+    @DynamoDBAttribute(attributeName = "imageUrl")
+    private String imageUrl;
+    @DynamoDBAttribute(attributeName = "prizingModel")
+    @DynamoDBTypeConvertedEnum
+    private PrizingModel prizingmodel;
+    @DynamoDBAttribute(attributeName = "promotion")
+    private Promotion promotion;
+    @DynamoDBTypeConvertedJson
+    @DynamoDBAttribute(attributeName = "recommendations")
+    private int recommendations;
     @DynamoDBAttribute(attributeName = "status")
     @DynamoDBTypeConvertedEnum
     private Status status;

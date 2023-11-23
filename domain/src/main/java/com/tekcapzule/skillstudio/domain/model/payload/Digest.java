@@ -12,10 +12,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Digest {
-    @DynamoDBAttribute(attributeName = "category")
+    @DynamoDBAttribute(attributeName = "digestType")
     @DynamoDBTypeConvertedEnum
-    private Category category;
-    @DynamoDBAttribute(attributeName = "schedule")
+    private DigestType digestType;
+    @DynamoDBAttribute(attributeName = "eventSchedule")
     private String schedule;
 
 }

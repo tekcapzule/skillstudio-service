@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @DynamoDBDocument
-public class Schedule {
+public class EventSchedule {
     private String startDate;
     private String endDate;
     private String startTime;

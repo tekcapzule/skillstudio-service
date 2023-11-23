@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public enum Category {
+public enum DigestType {
     NEWS_LETTER("News Letter"),
     PODCAST("Podcast");
 

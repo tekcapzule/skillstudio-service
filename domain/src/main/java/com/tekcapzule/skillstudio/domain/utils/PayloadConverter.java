@@ -4,7 +4,11 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tekcapzule.skillstudio.domain.model.payload.*;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.Base64;
+
+@Slf4j
 public class PayloadConverter implements DynamoDBTypeConverter<String, LearningData> {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
@@ -12,7 +16,8 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
     @Override
     public String convert(LearningData object) {
         try {
-            return objectMapper.writeValueAsString(object);
+            String jsonString = objectMapper.writeValueAsString(object);
+            return Base64.getEncoder().encodeToString(jsonString.getBytes());
         } catch (JsonProcessingException e) {
             // Handle the exception appropriately
             throw new RuntimeException("Error converting object to JSON", e);
@@ -22,25 +27,28 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
     @Override
     public LearningData unconvert(String json) {
         try {
-            LearningData superClassObject = objectMapper.readValue(json, LearningData.class);
+            byte[] decodedBytes = Base64.getDecoder().decode(json);
+            String jsonString = new String(decodedBytes);
+            LearningData learningData = objectMapper.readValue(jsonString, LearningData.class);
 
-            if ("Course".equals(superClassObject.getType())) {
-                return objectMapper.readValue(json, Course.class);
-            } else if ("Digest".equals(superClassObject.getType())) {
-                return objectMapper.readValue(json, Digest.class);
-            }else if ("Event".equals(superClassObject.getType())) {
-                return objectMapper.readValue(json, Event.class);
-            }else if ("Tekbyte".equals(superClassObject.getType())) {
-                return objectMapper.readValue(json, Tekbyte.class);
-            }else if ("Video".equals(superClassObject.getType())) {
-                return objectMapper.readValue(json, Video.class);
-            }else if ("ResearchPaper".equals(superClassObject.getType())) {
-                return objectMapper.readValue(json, ResearchPaper.class);
+            if ("Course".equals(learningData.getType())) {
+                return objectMapper.readValue(jsonString, Course.class);
+            } else if ("Digest".equals(learningData.getType())) {
+                return objectMapper.readValue(jsonString, Digest.class);
+            }else if ("Event".equals(learningData.getType())) {
+                return objectMapper.readValue(jsonString, Event.class);
+            }else if ("Tekbyte".equals(learningData.getType())) {
+                log.info("Entering tekbyte");
+                return objectMapper.readValue(jsonString, Tekbyte.class);
+            }else if ("Video".equals(learningData.getType())) {
+                return objectMapper.readValue(jsonString, Video.class);
+            }else if ("ResearchPaper".equals(learningData.getType())) {
+                return objectMapper.readValue(jsonString, ResearchPaper.class);
             }
 
 
             // Handle other types or throw an exception for unknown types
-            throw new RuntimeException("Unknown type: " + superClassObject.getType());
+            throw new RuntimeException("Unknown type: " + learningData.getType());
         } catch (JsonProcessingException e) {
             // Handle the exception appropriately
             throw new RuntimeException("Error converting JSON to object", e);

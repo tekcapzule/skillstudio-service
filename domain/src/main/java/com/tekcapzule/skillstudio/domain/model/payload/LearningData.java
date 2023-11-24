@@ -30,5 +30,6 @@ import java.util.List;
 //
 //})
 public class LearningData {
+    @DynamoDBAttribute(attributeName = "type")
     private String type;
 }

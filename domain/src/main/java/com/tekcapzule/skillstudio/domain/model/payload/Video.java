@@ -6,7 +6,6 @@ import lombok.experimental.SuperBuilder;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@SuperBuilder
 public class Video extends LearningData{
 }
 

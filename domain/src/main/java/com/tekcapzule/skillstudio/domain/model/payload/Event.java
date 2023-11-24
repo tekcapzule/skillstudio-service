@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Event extends LearningData {

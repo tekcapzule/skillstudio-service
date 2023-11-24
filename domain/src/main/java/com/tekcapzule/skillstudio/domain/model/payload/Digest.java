@@ -9,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Digest extends LearningData{

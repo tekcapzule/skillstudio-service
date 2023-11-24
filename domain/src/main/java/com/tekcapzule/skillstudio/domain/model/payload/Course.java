@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course extends LearningData {

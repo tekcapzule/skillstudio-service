@@ -10,6 +10,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@DynamoDBDocument
 public class Course extends LearningData {
 
     @DynamoDBAttribute(attributeName = "modules")

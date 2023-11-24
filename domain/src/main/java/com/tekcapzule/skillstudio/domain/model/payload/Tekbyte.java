@@ -1,6 +1,7 @@
 package com.tekcapzule.skillstudio.domain.model.payload;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
@@ -12,8 +13,8 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Tekbyte_old extends LearningData {
+@DynamoDBDocument
+public class Tekbyte extends LearningData {
     @DynamoDBAttribute(attributeName = "illustrationUrl")
     private String illustrationUrl;
     @DynamoDBAttribute(attributeName = "goldenCircle")

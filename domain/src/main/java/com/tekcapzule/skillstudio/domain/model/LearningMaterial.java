@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.AggregateRoot;
 import com.tekcapzule.core.domain.BaseDomainEntity;
 import com.tekcapzule.skillstudio.domain.model.payload.LearningData;
+import com.tekcapzule.skillstudio.domain.utils.PayloadConverter;
 import lombok.*;
 
 import java.util.List;
@@ -57,6 +58,7 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private Status status;
     //Add the correct type and need to bind the payload here...
     @DynamoDBAttribute(attributeName = "payload")
+    @DynamoDBTypeConverted(converter = PayloadConverter.class)
     private LearningData payload;
 }
 

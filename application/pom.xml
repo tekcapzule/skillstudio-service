@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.tekcapzule</groupId>
     <artifactId>skillstudio-service</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <name>SkillStudio Service</name>
     <description>SkillStudio Service</description>
     <properties>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>com.tekcapzule</groupId>
             <artifactId>skillstudio-domain</artifactId>
-            <version>1.0.6</version>
+            <version>1.0.7</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

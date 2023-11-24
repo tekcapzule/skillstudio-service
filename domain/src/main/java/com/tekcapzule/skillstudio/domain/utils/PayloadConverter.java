@@ -17,7 +17,8 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
     public String convert(LearningData object) {
         try {
             String jsonString = objectMapper.writeValueAsString(object);
-            return Base64.getEncoder().encodeToString(jsonString.getBytes());
+            log.info("json value"+jsonString);
+            return jsonString;
         } catch (JsonProcessingException e) {
             // Handle the exception appropriately
             throw new RuntimeException("Error converting object to JSON", e);

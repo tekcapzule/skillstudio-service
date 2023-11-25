@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 @Data
-@Builder
+@SuperBuilder
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor

@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 
@@ -20,13 +22,33 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
     @Override
     public String convert(LearningData object) {
         try {
-            String jsonString = objectMapper.writeValueAsString(object);
-            log.info("json value"+jsonString);
-            return jsonString;
+//            Map<String, Object> attributeMap = new HashMap<>();
+//            attributeMap.put("type", object.getType());
+            //String jsonString = objectMapper.writeValueAsString(object);
+            if (object.getType()!=null && object.getType().equals("Tekbyte")) {
+                LearningData.Tekbyte tekbyte = (LearningData.Tekbyte) object;
+                String jsonString = objectMapper.writeValueAsString(object);
+                log.info("jsonString value"+jsonString);
+                return jsonString;
+              //  attributeMap.put()
+              //  objectMapper.
+               /* attributeMap.put("videoAttribute", tekbyte.());
+                attributeMap.put("additionalAttributes", video.getAdditionalAttributes());*/
+            } else if (object.getType()!=null && object.getType().equals("Video")) {
+                LearningData.Video video = (LearningData.Video) object;
+                String jsonString = objectMapper.writeValueAsString(video);
+                log.info("jsonString value"+jsonString);
+                return jsonString;
+                //  attributeMap.put()
+                //  objectMapper.
+               /* attributeMap.put("videoAttribute", tekbyte.());
+                attributeMap.put("additionalAttributes", video.getAdditionalAttributes());*/
+            }
         } catch (JsonProcessingException e) {
             // Handle the exception appropriately
             throw new RuntimeException("Error converting object to JSON", e);
         }
+        return null;
     }
 
     @Override

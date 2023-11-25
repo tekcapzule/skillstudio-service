@@ -34,7 +34,7 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
         try {
 //            byte[] decodedBytes = Base64.getDecoder().decode(json);
 //            String jsonString = new String(decodedBytes);
-         //   LearningData learningData = objectMapper.readValue(jsonString, LearningData.class);
+            LearningData learningData = objectMapper.readValue(jsonString, LearningData.class);
 
 //            if ("Course".equals(learningData.getType())) {
 //                return objectMapper.readValue(jsonString, Course.class);
@@ -50,11 +50,17 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
 //            }else if ("ResearchPaper".equals(learningData.getType())) {
 //                return objectMapper.readValue(jsonString, ResearchPaper.class);
 //            }
-            return objectMapper.readValue(jsonString, LearningData.class);
+            if ("Video".equals(learningData.getType())) {
+                log.info("Entering tekbyte");
+                return objectMapper.readValue(jsonString, LearningData.Video.class);
+           }else if ("Tekbyte".equals(learningData.getType())) {
+                log.info("Entering tekbyte");
+                return objectMapper.readValue(jsonString, LearningData.Tekbyte.class);
+            }
 
 
             // Handle other types or throw an exception for unknown types
-          //  throw new RuntimeException("Unknown type: " + learningData.getType());
+           throw new RuntimeException("Unknown type: " + learningData.getType());
         } catch (JsonProcessingException e) {
             // Handle the exception appropriately
             throw new RuntimeException("Error converting JSON to object", e);

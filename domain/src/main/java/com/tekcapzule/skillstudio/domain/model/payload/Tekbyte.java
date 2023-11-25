@@ -4,6 +4,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @DynamoDBDocument
+@JsonTypeName("Tekbyte")
 public class Tekbyte extends LearningData {
     @DynamoDBAttribute(attributeName = "illustrationUrl")
     private String illustrationUrl;

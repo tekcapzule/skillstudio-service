@@ -3,7 +3,7 @@ package com.tekcapzule.skillstudio.application.function.input;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.skillstudio.domain.model.PrizingModel;
 import com.tekcapzule.skillstudio.domain.model.Promotion;
-import com.tekcapzule.skillstudio.domain.model.payload.LearningData;
+import com.tekcapzule.skillstudio.domain.model.payload.LearningGenericData;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -30,5 +30,5 @@ public class CreateInput {
 
     private Promotion promotion;
     private String publishedOn;
-    private LearningData payload;
+    private LearningGenericData payload;
 }

@@ -2,13 +2,13 @@ package com.tekcapzule.skillstudio.domain.model.payload;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTyped;
-import com.fasterxml.jackson.annotation.*;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBFlattened;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@DynamoDBDocument
+@DynamoDBFlattened
 @JsonInclude(JsonInclude.Include.NON_NULL)
 //@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 //@JsonSubTypes({
@@ -29,8 +29,6 @@ import java.util.List;
 //        @JsonSubTypes.Type(value = ResearchPaper.class, name = "ResearchPaper"),
 //
 //})
-public class LearningData {
-    @DynamoDBAttribute(attributeName = "type")
-    private String type;
-
+public class LearningGenericData<T extends LearningData> {
+    private T item;
 }

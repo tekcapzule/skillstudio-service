@@ -1,3 +1,4 @@
+/*
 package com.tekcapzule.skillstudio.domain.utils;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter;
@@ -32,8 +33,10 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
                 return jsonString;
               //  attributeMap.put()
               //  objectMapper.
-               /* attributeMap.put("videoAttribute", tekbyte.());
-                attributeMap.put("additionalAttributes", video.getAdditionalAttributes());*/
+               */
+/* attributeMap.put("videoAttribute", tekbyte.());
+                attributeMap.put("additionalAttributes", video.getAdditionalAttributes());*//*
+
             } else if (object.getType()!=null && object.getType().equals("Video")) {
                 LearningData.Video video = (LearningData.Video) object;
                 String jsonString = objectMapper.writeValueAsString(video);
@@ -41,8 +44,10 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
                 return jsonString;
                 //  attributeMap.put()
                 //  objectMapper.
-               /* attributeMap.put("videoAttribute", tekbyte.());
-                attributeMap.put("additionalAttributes", video.getAdditionalAttributes());*/
+               */
+/* attributeMap.put("videoAttribute", tekbyte.());
+                attributeMap.put("additionalAttributes", video.getAdditionalAttributes());*//*
+
             }
         } catch (JsonProcessingException e) {
             // Handle the exception appropriately
@@ -89,6 +94,7 @@ public class PayloadConverter implements DynamoDBTypeConverter<String, LearningD
         }
     }
 }
+*/
 /*
 public class PayloadConverter {
 public static class Serializer extends JsonSerializer<LearningData> {
@@ -117,6 +123,8 @@ public static class Deserializer extends JsonDeserializer<LearningData> {
         }
     }
 }
-}*/
+}*//*
 
 
+
+*/

@@ -17,8 +17,8 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@DynamoDBFlattened
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@DynamoDBDocument
 //@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 //@JsonSubTypes({
 //        @JsonSubTypes.Type(value = Course.class, name = "Course"),
@@ -30,5 +30,7 @@ import java.util.List;
 //
 //})
 public class LearningGenericData<T extends LearningData> {
+
+    @DynamoDBAttribute(attributeName = "item")
     private T item;
 }

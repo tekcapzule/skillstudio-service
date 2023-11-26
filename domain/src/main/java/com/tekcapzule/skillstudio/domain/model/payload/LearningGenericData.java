@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBFlattened;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +14,9 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
+
+import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
+
 @Slf4j
 @Data
 @Builder
@@ -41,11 +45,15 @@ public class LearningGenericData<T extends LearningData> {
         return item;
     }
 
-    public void setItem(T item) {
+    public void setItem(T item) throws JsonProcessingException {
         if(item.getType().equals("Tekbyte")) {
             log.info("entering tekbyte setitem");
+
             ObjectMapper mapper = new ObjectMapper();
-            this.item = mapper.convertValue(item, (Class<T>) Tekbyte.class);
+            String jsonString = mapper.writeValueAsString(item);
+            // Print the JSON string
+            System.out.println(jsonString);
+            this.item = mapper.readValue(jsonString, (Class<T>) Tekbyte.class);
         }
 
     }

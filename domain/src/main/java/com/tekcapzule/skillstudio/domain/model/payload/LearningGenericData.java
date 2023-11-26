@@ -19,7 +19,6 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @DynamoDBDocument
 //@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 //@JsonSubTypes({

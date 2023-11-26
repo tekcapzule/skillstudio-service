@@ -36,7 +36,7 @@ import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
 //})
 public class LearningGenericData<T extends LearningData> {
 
-    public T getItem() {
+   /* public T getItem() {
         log.info("entering get item"+item.getClass());
 
         if(item instanceof Tekbyte) {
@@ -56,7 +56,7 @@ public class LearningGenericData<T extends LearningData> {
             this.item = mapper.readValue(jsonString, (Class<T>) Tekbyte.class);
         }
 
-    }
+    }*/
 
     @DynamoDBAttribute(attributeName = "item")
     private T item;

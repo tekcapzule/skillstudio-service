@@ -12,10 +12,10 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @DynamoDBDocument
 // @JsonTypeName("Tekbyte")
 public  class Tekbyte extends LearningData {

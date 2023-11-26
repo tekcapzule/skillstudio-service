@@ -35,6 +35,10 @@ public class LearningGenericData<T extends LearningData> {
 
     public T getItem() {
         log.info("entering get item"+item.getClass());
+
+        if(item instanceof Tekbyte) {
+            System.out.println("illustration url"+((Tekbyte) item).getIllustrationUrl());
+        }
         return item;
     }
 
@@ -43,7 +47,6 @@ public class LearningGenericData<T extends LearningData> {
             log.info("entering tekbyte setitem");
             ObjectMapper mapper = new ObjectMapper();
             this.item = mapper.convertValue(item, (Class<T>) Tekbyte.class);
-         //   this.item = Objec
         }
 
     }

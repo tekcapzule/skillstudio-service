@@ -17,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @DynamoDBDocument
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Course.class, name = "Course"),
@@ -25,7 +24,7 @@ import java.util.List;
         @JsonSubTypes.Type(value = Event.class, name = "Event"),
         @JsonSubTypes.Type(value = Tekbyte.class, name = "Tekbyte"),
         @JsonSubTypes.Type(value = Video.class, name = "Video"),
-        @JsonSubTypes.Type(value = ResearchPaper.class, name = "ResearchPaper"),
+        @JsonSubTypes.Type(value = ResearchPaper.class, name = "ResearchPaper")
 
 })
 public class LearningData {

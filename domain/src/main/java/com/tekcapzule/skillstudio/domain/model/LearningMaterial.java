@@ -59,6 +59,6 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     //Add the correct type and need to bind the payload here...
     @DynamoDBAttribute(attributeName = "payload")
    // @DynamoDBTypeConverted(converter = PayloadConverter.class)
-    private LearningGenericData payload;
+    private LearningData payload;
 }
 

@@ -16,8 +16,8 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
-//@DynamoDBDocument
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@DynamoDBDocument
+/*@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Course.class, name = "Course"),
@@ -26,7 +26,7 @@ import java.util.List;
         @JsonSubTypes.Type(value = Tekbyte.class, name = "Tekbyte"),
         @JsonSubTypes.Type(value = Video.class, name = "Video"),
         @JsonSubTypes.Type(value = ResearchPaper.class, name = "ResearchPaper")
-})
+})*/
 //@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 //@JsonSubTypes({
 //        @JsonSubTypes.Type(value = Course.class, name = "Course"),
@@ -38,6 +38,7 @@ import java.util.List;
 //
 //})
 public class LearningData {
+    @DynamoDBAttribute(attributeName = "type")
     private String type;
 
 }

@@ -43,11 +43,13 @@ public class LearningGenericData<T extends LearningData> {
     }
 
     public void setItem(T item) {
-        if(item.getType().equals("Tekbyte")) {
+       /* if(item.getType().equals("Tekbyte")) {
             log.info("entering tekbyte setitem");
             ObjectMapper mapper = new ObjectMapper();
             this.item = mapper.convertValue(item, (Class<T>) Tekbyte.class);
-        }
+        }*/
+        this.item = item;
+        log.info("entering get item"+item.getClass());
 
     }
 

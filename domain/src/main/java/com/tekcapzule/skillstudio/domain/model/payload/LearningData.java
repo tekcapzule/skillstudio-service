@@ -13,6 +13,7 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 @Data
+@Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,7 +30,17 @@ import java.util.List;
 //
 //})
 public class LearningData {
-    @DynamoDBAttribute(attributeName = "type")
-    private String type;
+    @DynamoDBAttribute(attributeName = "tekbyte")
+    private Tekbyte tekbyte;
+    @DynamoDBAttribute(attributeName = "video")
+    private Video video;
+    @DynamoDBAttribute(attributeName = "course")
+    private Course course;
+    @DynamoDBAttribute(attributeName = "digest")
+    private Digest digest;
+    @DynamoDBAttribute(attributeName = "event")
+    private Event event;
+    @DynamoDBAttribute(attributeName = "researchPaper")
+    private ResearchPaper researchPaper;
 
 }

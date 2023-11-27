@@ -32,6 +32,6 @@ public class CreateCommand extends Command {
 
     private Promotion promotion;
     private String publishedOn;
-    private LearningGenericData payload;
+    private LearningData learningData;
 
 }

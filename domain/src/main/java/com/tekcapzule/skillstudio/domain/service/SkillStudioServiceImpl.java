@@ -30,16 +30,21 @@ public class SkillStudioServiceImpl implements SkillStudioService {
         LearningMaterial learningMaterial = LearningMaterial.builder()
                 .title(createCommand.getTitle())
                 .topicCode(createCommand.getTopicCode())
+                .subTopicCode(createCommand.getSubTopicCode())
+                .authors(createCommand.getAuthors())
                 .publisher(createCommand.getPublisher())
                 .duration(createCommand.getDuration())
                 .resourceUrl(createCommand.getResourceUrl())
                 .summary(createCommand.getSummary())
                 .description(createCommand.getDescription())
+                .prizingmodel(createCommand.getPrizingModel())
                 .imageUrl(createCommand.getImageUrl())
+                .tags(createCommand.getTags())
+                .recommendations(createCommand.getRecommendations())
                 .promotion(createCommand.getPromotion())
                 .status(Status.SUBMITTED)
-                .recommendations(createCommand.getRecommendations())
                 .publishedOn(createCommand.getPublishedOn())
+                .payload(createCommand.getPayload())
                 .build();
 
         learningMaterial.setAddedOn(createCommand.getExecOn());

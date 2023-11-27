@@ -4,6 +4,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.AggregateRoot;
 import com.tekcapzule.core.domain.BaseDomainEntity;
+import com.tekcapzule.skillstudio.domain.model.payload.LearningData;
+import com.tekcapzule.skillstudio.domain.model.payload.LearningGenericData;
 import lombok.*;
 
 import java.util.List;
@@ -49,15 +51,14 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private PrizingModel prizingmodel;
     @DynamoDBAttribute(attributeName = "promotion")
     private Promotion promotion;
-    @DynamoDBTypeConvertedJson
     @DynamoDBAttribute(attributeName = "recommendations")
     private int recommendations;
     @DynamoDBAttribute(attributeName = "status")
     @DynamoDBTypeConvertedEnum
     private Status status;
-
     //Add the correct type and need to bind the payload here...
     @DynamoDBAttribute(attributeName = "payload")
-    private String payload;
+   // @DynamoDBTypeConverted(converter = PayloadConverter.class)
+    private LearningGenericData payload;
 }
 

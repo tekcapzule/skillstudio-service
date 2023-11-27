@@ -36,7 +36,7 @@ public class CreateFunction implements Function<Message<CreateInput>, Message<Vo
     public Message<Void> apply(Message<CreateInput> createInputMessage) {
 
         Map<String, Object> responseHeaders = new HashMap<>();
-        Map<String, Object> payload = new HashMap<>();
+        Map<String, Object> payload;
         String stage = appConfig.getStage().toUpperCase();
 
         try {

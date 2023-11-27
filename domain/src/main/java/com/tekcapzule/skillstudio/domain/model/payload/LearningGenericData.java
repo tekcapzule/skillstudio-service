@@ -43,9 +43,9 @@ public class LearningGenericData<T extends LearningData> {
             log.info("entering tekbyte setitem");
             ObjectMapper mapper = new ObjectMapper();
             this.item = mapper.convertValue(item, (Class<T>) Tekbyte.class);
-         //   this.item = Objec
+        } else {
+            this.item = item;
         }
-
     }
 
     @DynamoDBAttribute(attributeName = "item")

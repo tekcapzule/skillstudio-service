@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.AggregateRoot;
 import com.tekcapzule.core.domain.BaseDomainEntity;
 import com.tekcapzule.skillstudio.domain.model.payload.LearningData;
-import com.tekcapzule.skillstudio.domain.model.payload.LearningGenericData;
 import lombok.*;
 
 import java.util.List;

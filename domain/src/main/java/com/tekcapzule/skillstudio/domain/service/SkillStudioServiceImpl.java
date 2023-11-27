@@ -44,7 +44,7 @@ public class SkillStudioServiceImpl implements SkillStudioService {
                 .promotion(createCommand.getPromotion())
                 .status(Status.SUBMITTED)
                 .publishedOn(createCommand.getPublishedOn())
-                .payload(createCommand.getPayload())
+                .learningData(createCommand.getLearningData())
                 .build();
 
         learningMaterial.setAddedOn(createCommand.getExecOn());

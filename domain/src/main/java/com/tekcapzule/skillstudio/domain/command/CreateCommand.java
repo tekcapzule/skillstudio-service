@@ -5,7 +5,6 @@ import com.tekcapzule.core.domain.Command;
 import com.tekcapzule.skillstudio.domain.model.PrizingModel;
 import com.tekcapzule.skillstudio.domain.model.Promotion;
 import com.tekcapzule.skillstudio.domain.model.payload.LearningData;
-import com.tekcapzule.skillstudio.domain.model.payload.LearningGenericData;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,3 +1,4 @@
+/*
 package com.tekcapzule.skillstudio.domain.model.payload;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
@@ -52,3 +53,4 @@ public class LearningGenericData<T extends LearningData> {
     private T item;
 
 }
+*/

@@ -83,10 +83,10 @@ Resources:
             WriteCapacityUnits: 1
   # Setup Lambda Functions
 
-  CreateSkillStudioFunction:
+  CreateLearningMaterialFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-SkillStudio-CreateSkillStudio"
+      FunctionName: !Sub "${Stage}-SkillStudio-CreateLearningMaterial"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
@@ -94,7 +94,7 @@ Resources:
             TableName: !Ref SkillStudioTable
       Environment:
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: createFunction
+          SPRING_CLOUD_FUNCTION_DEFINITION: createLearningMaterialFunction
       Events:
         ApiEvent:
           Type: Api
@@ -104,10 +104,10 @@ Resources:
             RestApiId:
               Ref: SkillStudioApi
 
-  UpdateSkillStudioFunction:
+  UpdateLearningMaterialFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-SkillStudio-UpdateSkillStudio"
+      FunctionName: !Sub "${Stage}-SkillStudio-UpdateLearningMaterial"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
@@ -115,7 +115,7 @@ Resources:
             TableName: !Ref SkillStudioTable
       Environment:
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: updateFunction
+          SPRING_CLOUD_FUNCTION_DEFINITION: updateLearningMaterialFunction
       Events:
         ApiEvent:
           Type: Api
@@ -125,10 +125,10 @@ Resources:
             RestApiId:
               Ref: SkillStudioApi
 
-  GetSkillStudioFunction:
+  GetLearningMaterialFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-SkillStudio-GetSkillStudio"
+      FunctionName: !Sub "${Stage}-SkillStudio-GetLearningMaterial"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
@@ -136,7 +136,7 @@ Resources:
             TableName: !Ref SkillStudioTable
       Environment:
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: getFunction
+          SPRING_CLOUD_FUNCTION_DEFINITION: getLearningMaterialFunction
       Events:
         ApiEvent:
           Type: Api
@@ -146,10 +146,10 @@ Resources:
             RestApiId:
               Ref: SkillStudioApi
 
-  GetAllSkillStudiosFunction:
+  GetAllLearningMaterialsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-SkillStudio-GetAllSkillStudios"
+      FunctionName: !Sub "${Stage}-SkillStudio-GetAllLearningMaterial"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
@@ -157,7 +157,7 @@ Resources:
             TableName: !Ref SkillStudioTable
       Environment:
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: getAllFunction
+          SPRING_CLOUD_FUNCTION_DEFINITION: getAllLearningMaterialFunction
       Events:
         ApiEvent:
           Type: Api
@@ -167,10 +167,10 @@ Resources:
             RestApiId:
               Ref: SkillStudioApi
 
-  RecommendSkillStudioFunction:
+  RecommendLearningMaterialFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-SkillStudio-RecommendSkillStudio"
+      FunctionName: !Sub "${Stage}-SkillStudio-RecommendLearningMaterial"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
@@ -178,7 +178,7 @@ Resources:
             TableName: !Ref SkillStudioTable
       Environment:
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: recommendFunction
+          SPRING_CLOUD_FUNCTION_DEFINITION: recommendLearningMaterialFunction
       Events:
         ApiEvent:
           Type: Api
@@ -188,10 +188,10 @@ Resources:
             RestApiId:
               Ref: SkillStudioApi
 
-  ApproveSkillStudioFunction:
+  ApproveLearningMaterialFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-SkillStudio-ApproveSkillStudio"
+      FunctionName: !Sub "${Stage}-SkillStudio-ApproveLearningMaterial"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
@@ -199,7 +199,7 @@ Resources:
             TableName: !Ref SkillStudioTable
       Environment:
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: approveFunction
+          SPRING_CLOUD_FUNCTION_DEFINITION: approveLearningMaterialFunction
       Events:
         ApiEvent:
           Type: Api

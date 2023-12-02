@@ -21,7 +21,7 @@ public class CreateLearningMaterialInput {
     private String publishedOn;
     private List<String> authors;
     private List<String> tags;
-    private String duration;
+    private Duration duration;
     private String resourceUrl;
     private String imageUrl;
     private List<Module> modules;

@@ -41,6 +41,17 @@ public class LearningMaterialServiceImpl implements LearningMaterialService {
                 .imageUrl(createLearningMaterialCommand.getImageUrl())
                 .tags(createLearningMaterialCommand.getTags())
                 .promotion(createLearningMaterialCommand.getPromotion())
+                .modules(createLearningMaterialCommand.getModules())
+                .deliveryMode(createLearningMaterialCommand.getDeliveryMode())
+                .overview(createLearningMaterialCommand.getOverview())
+                .level(createLearningMaterialCommand.getLevel())
+                .targetAudience(createLearningMaterialCommand.getTargetAudience())
+                .schedule(createLearningMaterialCommand.getSchedule())
+                .region(createLearningMaterialCommand.getRegion())
+                .venue(createLearningMaterialCommand.getVenue())
+                .registrationUrl(createLearningMaterialCommand.getRegistrationUrl())
+                .prizingModel(createLearningMaterialCommand.getPrizingModel())
+                .promotion(createLearningMaterialCommand.getPromotion())
                 .status(Status.SUBMITTED)
                 .publishedOn(createLearningMaterialCommand.getPublishedOn())
                 .build();
@@ -60,15 +71,29 @@ public class LearningMaterialServiceImpl implements LearningMaterialService {
         if (learningMaterial != null) {
             learningMaterial.setTitle(updateLearningMaterialCommand.getTitle());
             learningMaterial.setTopicCode(updateLearningMaterialCommand.getTopicCode());
+            learningMaterial.setSubTopicCode(updateLearningMaterialCommand.getSubTopicCode());
+            learningMaterial.setAuthors(updateLearningMaterialCommand.getAuthors());
             learningMaterial.setPublisher(updateLearningMaterialCommand.getPublisher());
             learningMaterial.setDuration(updateLearningMaterialCommand.getDuration());
             learningMaterial.setResourceUrl(updateLearningMaterialCommand.getResourceUrl());
             learningMaterial.setSummary(updateLearningMaterialCommand.getSummary());
             learningMaterial.setDescription(updateLearningMaterialCommand.getDescription());
-            learningMaterial.setPromotion(updateLearningMaterialCommand.getPromotion());
+            learningMaterial.setPrizingModel(updateLearningMaterialCommand.getPrizingModel());
             learningMaterial.setImageUrl(updateLearningMaterialCommand.getImageUrl());
-            learningMaterial.setUpdatedOn(updateLearningMaterialCommand.getExecOn());
-            learningMaterial.setUpdatedBy(updateLearningMaterialCommand.getExecBy().getUserId());
+            learningMaterial.setTags(updateLearningMaterialCommand.getTags());
+            learningMaterial.setPromotion(updateLearningMaterialCommand.getPromotion());
+            learningMaterial.setModules(updateLearningMaterialCommand.getModules());
+            learningMaterial.setDeliveryMode(updateLearningMaterialCommand.getDeliveryMode());
+            learningMaterial.setOverview(updateLearningMaterialCommand.getOverview());
+            learningMaterial.setLevel(updateLearningMaterialCommand.getLevel());
+            learningMaterial.setTargetAudience(updateLearningMaterialCommand.getTargetAudience());
+            learningMaterial.setSchedule(updateLearningMaterialCommand.getSchedule());
+            learningMaterial.setRegion(updateLearningMaterialCommand.getRegion());
+            learningMaterial.setVenue(updateLearningMaterialCommand.getVenue());
+            learningMaterial.setRegistrationUrl(updateLearningMaterialCommand.getRegistrationUrl());
+            learningMaterial.setPrizingModel(updateLearningMaterialCommand.getPrizingModel());
+            learningMaterial.setPromotion(updateLearningMaterialCommand.getPromotion());
+            learningMaterial.setStatus(Status.SUBMITTED);
             learningMaterial.setPublishedOn(updateLearningMaterialCommand.getPublishedOn());
             learningMaterialRepository.save(learningMaterial);
         }

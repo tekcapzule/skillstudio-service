@@ -1,5 +1,6 @@
 package com.tekcapzule.skillstudio.domain.model;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -14,7 +15,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @DynamoDBDocument
 public class GoldenCircle {
+    @DynamoDBAttribute(attributeName = "why")
     private String why;
+    @DynamoDBAttribute(attributeName = "how")
     private String how;
+    @DynamoDBAttribute(attributeName = "what")
     private String what;
 }

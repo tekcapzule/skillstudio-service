@@ -3,14 +3,14 @@ package com.tekcapzule.skillstudio.application.mapper;
 import com.tekcapzule.core.domain.Command;
 import com.tekcapzule.core.domain.ExecBy;
 import com.tekcapzule.core.domain.Origin;
-import com.tekcapzule.skillstudio.application.function.input.ApproveSkillStudioInput;
-import com.tekcapzule.skillstudio.application.function.input.CreateInput;
-import com.tekcapzule.skillstudio.application.function.input.RecommendInput;
-import com.tekcapzule.skillstudio.application.function.input.UpdateInput;
-import com.tekcapzule.skillstudio.domain.command.ApproveCommand;
-import com.tekcapzule.skillstudio.domain.command.CreateCommand;
-import com.tekcapzule.skillstudio.domain.command.RecommendCommand;
-import com.tekcapzule.skillstudio.domain.command.UpdateCommand;
+import com.tekcapzule.skillstudio.application.function.input.ApproveLearningMaterialInput;
+import com.tekcapzule.skillstudio.application.function.input.CreateLearningMaterialInput;
+import com.tekcapzule.skillstudio.application.function.input.RecommendLearningMaterialInput;
+import com.tekcapzule.skillstudio.application.function.input.UpdateLearningMaterialInput;
+import com.tekcapzule.skillstudio.domain.command.ApproveLearningMaterialCommand;
+import com.tekcapzule.skillstudio.domain.command.CreateLearningMaterialCommand;
+import com.tekcapzule.skillstudio.domain.command.RecommendLearningMaterialCommand;
+import com.tekcapzule.skillstudio.domain.command.UpdateLearningMaterialCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 
@@ -32,32 +32,32 @@ public final class InputOutputMapper {
         return command;
     };
 
-    public static final BiFunction<CreateInput, Origin, CreateCommand> buildCreateCommandFromCreateInput = (createInput, origin) -> {
-        CreateCommand createCommand =  CreateCommand.builder().build();
-        BeanUtils.copyProperties(createInput, createCommand);
-        addOrigin.apply(createCommand, origin);
-        return createCommand;
+    public static final BiFunction<CreateLearningMaterialInput, Origin, CreateLearningMaterialCommand> buildCreateCommandFromCreateInput = (createLearningMaterialInput, origin) -> {
+        CreateLearningMaterialCommand createLearningMaterialCommand =  CreateLearningMaterialCommand.builder().build();
+        BeanUtils.copyProperties(createLearningMaterialInput, createLearningMaterialCommand);
+        addOrigin.apply(createLearningMaterialCommand, origin);
+        return createLearningMaterialCommand;
     };
 
-    public static final BiFunction<UpdateInput, Origin, UpdateCommand> buildUpdateCommandFromUpdateInput = (updateInput, origin) -> {
-        UpdateCommand updateCommand = UpdateCommand.builder().build();
-        BeanUtils.copyProperties(updateInput, updateCommand);
-        addOrigin.apply(updateCommand, origin);
-        return updateCommand;
+    public static final BiFunction<UpdateLearningMaterialInput, Origin, UpdateLearningMaterialCommand> buildUpdateCommandFromUpdateInput = (updateLearningMaterialInput, origin) -> {
+        UpdateLearningMaterialCommand updateLearningMaterialCommand = UpdateLearningMaterialCommand.builder().build();
+        BeanUtils.copyProperties(updateLearningMaterialInput, updateLearningMaterialCommand);
+        addOrigin.apply(updateLearningMaterialCommand, origin);
+        return updateLearningMaterialCommand;
     };
 
-    public static final BiFunction<RecommendInput, Origin, RecommendCommand> buildRecommendCommandFromRecommendInput = (recommendInput, origin) -> {
-        RecommendCommand recommendCommand =  RecommendCommand.builder().build();
-        BeanUtils.copyProperties(recommendInput, recommendCommand);
-        addOrigin.apply(recommendCommand, origin);
-        return recommendCommand;
+    public static final BiFunction<RecommendLearningMaterialInput, Origin, RecommendLearningMaterialCommand> buildRecommendCommandFromRecommendInput = (recommendLearningMaterialInput, origin) -> {
+        RecommendLearningMaterialCommand recommendLearningMaterialCommand =  RecommendLearningMaterialCommand.builder().build();
+        BeanUtils.copyProperties(recommendLearningMaterialInput, recommendLearningMaterialCommand);
+        addOrigin.apply(recommendLearningMaterialCommand, origin);
+        return recommendLearningMaterialCommand;
     };
 
-    public static final BiFunction<ApproveSkillStudioInput, Origin, ApproveCommand> buildApproveCommandFromApproveSkillStudioInput = (approveSkillStudioInput, origin) -> {
-        ApproveCommand approveCommand =  ApproveCommand.builder().build();
-        BeanUtils.copyProperties(approveSkillStudioInput, approveCommand);
-        addOrigin.apply(approveCommand, origin);
-        return approveCommand;
+    public static final BiFunction<ApproveLearningMaterialInput, Origin, ApproveLearningMaterialCommand> buildApproveCommandFromApproveSkillStudioInput = (approveLearningMaterialInput, origin) -> {
+        ApproveLearningMaterialCommand approveLearningMaterialCommand =  ApproveLearningMaterialCommand.builder().build();
+        BeanUtils.copyProperties(approveLearningMaterialInput, approveLearningMaterialCommand);
+        addOrigin.apply(approveLearningMaterialCommand, origin);
+        return approveLearningMaterialCommand;
     };
 
 }

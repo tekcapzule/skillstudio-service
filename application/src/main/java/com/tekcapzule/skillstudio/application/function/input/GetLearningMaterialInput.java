@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
-public class RecommendInput {
+public class GetLearningMaterialInput {
     private String learningMaterialId;
 }

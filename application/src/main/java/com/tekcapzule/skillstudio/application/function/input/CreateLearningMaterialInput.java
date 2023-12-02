@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
-public class CreateInput {
+public class CreateLearningMaterialInput {
     private String topicCode;
     private String subTopicCode;
     private String title;

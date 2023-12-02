@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.Command;
 import com.tekcapzule.skillstudio.domain.model.*;
 import com.tekcapzule.skillstudio.domain.model.Module;
+import com.tekcapzule.skillstudio.domain.model.DeliveryMode;
+import com.tekcapzule.skillstudio.domain.model.LearningMode;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,7 +14,8 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
-public class CreateCommand extends Command {
+public class UpdateLearningMaterialCommand extends Command {
+    private String learningMaterialId;
     private String topicCode;
     private String subTopicCode;
     private String title;
@@ -22,7 +25,7 @@ public class CreateCommand extends Command {
     private String publishedOn;
     private List<String> authors;
     private List<String> tags;
-    private String duration;
+    private Duration duration;
     private String resourceUrl;
     private String imageUrl;
     private List<Module> modules;

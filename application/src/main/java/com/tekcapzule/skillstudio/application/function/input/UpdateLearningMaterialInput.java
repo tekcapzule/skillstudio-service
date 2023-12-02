@@ -1,20 +1,19 @@
-package com.tekcapzule.skillstudio.domain.command;
+package com.tekcapzule.skillstudio.application.function.input;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.tekcapzule.core.domain.Command;
 import com.tekcapzule.skillstudio.domain.model.*;
 import com.tekcapzule.skillstudio.domain.model.Module;
 import com.tekcapzule.skillstudio.domain.model.DeliveryMode;
 import com.tekcapzule.skillstudio.domain.model.LearningMode;
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Builder
-public class UpdateCommand extends Command {
+@NoArgsConstructor
+public class UpdateLearningMaterialInput {
     private String learningMaterialId;
     private String topicCode;
     private String subTopicCode;
@@ -41,3 +40,5 @@ public class UpdateCommand extends Command {
     private PrizingModel prizingModel;
     private Promotion promotion;
 }
+
+

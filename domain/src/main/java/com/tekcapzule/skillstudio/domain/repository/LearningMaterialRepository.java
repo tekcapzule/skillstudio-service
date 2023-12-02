@@ -5,7 +5,7 @@ import com.tekcapzule.skillstudio.domain.model.LearningMaterial;
 
 import java.util.List;
 
-public interface SkillStudioRepository extends CrudRepository<LearningMaterial, String> {
+public interface LearningMaterialRepository extends CrudRepository<LearningMaterial, String> {
 
     List<LearningMaterial> findAllByTopicCode(String topicCode);
 }

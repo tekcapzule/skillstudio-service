@@ -38,7 +38,7 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     @DynamoDBAttribute(attributeName = "tags")
     private List<String> tags;
     @DynamoDBAttribute(attributeName = "duration")
-    private String duration;
+    private Duration duration;
     @DynamoDBAttribute(attributeName = "resourceUrl")
     private String resourceUrl;
     @DynamoDBAttribute(attributeName = "imageUrl")

@@ -6,7 +6,7 @@ import com.tekcapzule.core.utils.Outcome;
 import com.tekcapzule.core.utils.Stage;
 import com.tekcapzule.skillstudio.application.config.AppConfig;
 import com.tekcapzule.skillstudio.domain.model.LearningMaterial;
-import com.tekcapzule.skillstudio.domain.service.SkillStudioService;
+import com.tekcapzule.skillstudio.domain.service.LearningMaterialService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.GenericMessage;
@@ -17,13 +17,13 @@ import java.util.function.Function;
 
 @Component
 @Slf4j
-public class GetAllFunction implements Function<Message<EmptyFunctionInput>, Message<List<LearningMaterial>>> {
+public class GetAllLearningMaterialFunction implements Function<Message<EmptyFunctionInput>, Message<List<LearningMaterial>>> {
 
-    private final SkillStudioService skillstudioService;
+    private final LearningMaterialService skillstudioService;
 
     private final AppConfig appConfig;
 
-    public GetAllFunction(final SkillStudioService skillstudioService, final AppConfig appConfig) {
+    public GetAllLearningMaterialFunction(final LearningMaterialService skillstudioService, final AppConfig appConfig) {
         this.skillstudioService = skillstudioService;
         this.appConfig = appConfig;
     }
@@ -36,7 +36,7 @@ public class GetAllFunction implements Function<Message<EmptyFunctionInput>, Mes
         List<LearningMaterial> cours = new ArrayList<>();
         String stage = appConfig.getStage().toUpperCase();
         try {
-            log.info("Entering get all skillStudio Function");
+            log.info("Entering get all LearningMaterial Function");
             cours = skillstudioService.findAll();
             responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.SUCCESS);
         } catch (Exception ex) {

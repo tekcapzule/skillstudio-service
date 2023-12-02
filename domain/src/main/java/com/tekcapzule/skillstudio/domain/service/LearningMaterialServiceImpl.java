@@ -29,6 +29,7 @@ public class LearningMaterialServiceImpl implements LearningMaterialService {
 
         LearningMaterial learningMaterial = LearningMaterial.builder()
                 .title(createLearningMaterialCommand.getTitle())
+                .learningMaterialType(createLearningMaterialCommand.getLearningMaterialType())
                 .topicCode(createLearningMaterialCommand.getTopicCode())
                 .subTopicCode(createLearningMaterialCommand.getSubTopicCode())
                 .authors(createLearningMaterialCommand.getAuthors())
@@ -70,6 +71,7 @@ public class LearningMaterialServiceImpl implements LearningMaterialService {
         LearningMaterial learningMaterial = learningMaterialRepository.findBy(updateLearningMaterialCommand.getLearningMaterialId());
         if (learningMaterial != null) {
             learningMaterial.setTitle(updateLearningMaterialCommand.getTitle());
+            learningMaterial.setLearningMaterialType(updateLearningMaterialCommand.getLearningMaterialType());
             learningMaterial.setTopicCode(updateLearningMaterialCommand.getTopicCode());
             learningMaterial.setSubTopicCode(updateLearningMaterialCommand.getSubTopicCode());
             learningMaterial.setAuthors(updateLearningMaterialCommand.getAuthors());

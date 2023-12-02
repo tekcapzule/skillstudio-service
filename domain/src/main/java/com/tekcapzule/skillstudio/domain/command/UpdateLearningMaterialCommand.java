@@ -16,6 +16,7 @@ import java.util.List;
 @Builder
 public class UpdateLearningMaterialCommand extends Command {
     private String learningMaterialId;
+    private String learningMaterialType;
     private String topicCode;
     private String subTopicCode;
     private String title;

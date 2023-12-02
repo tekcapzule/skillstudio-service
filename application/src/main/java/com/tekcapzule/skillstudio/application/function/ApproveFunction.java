@@ -40,7 +40,7 @@ public class ApproveFunction implements Function<Message<ApproveSkillStudioInput
         String stage = appConfig.getStage().toUpperCase();
         try {
             ApproveSkillStudioInput approveSkillStudioInput = approveSkillStudioInputMessage.getPayload();
-            log.info(String.format("Entering approve skillstudio Function -  skillstudio Id:%s", approveSkillStudioInput.getSkillstudioId()));
+            log.info(String.format("Entering approve skillStudio Function -  learning material Id:%s", approveSkillStudioInput.getLearningMaterialId()));
             Origin origin = HeaderUtil.buildOriginFromHeaders(approveSkillStudioInputMessage.getHeaders());
             ApproveCommand approveCommand = InputOutputMapper.buildApproveCommandFromApproveSkillStudioInput.apply(approveSkillStudioInput, origin);
             skillstudioService.approve(approveCommand);

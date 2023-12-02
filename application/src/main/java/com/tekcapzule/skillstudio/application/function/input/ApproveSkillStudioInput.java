@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 public class ApproveSkillStudioInput {
-    private String skillstudioId;
+    private String learningMaterialId;
 }

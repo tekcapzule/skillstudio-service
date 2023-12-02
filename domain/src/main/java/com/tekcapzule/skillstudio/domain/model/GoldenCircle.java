@@ -1,4 +1,4 @@
-package com.tekcapzule.skillstudio.domain.model.payload;
+package com.tekcapzule.skillstudio.domain.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

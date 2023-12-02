@@ -4,11 +4,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.AggregateRoot;
 import com.tekcapzule.core.domain.BaseDomainEntity;
-import com.tekcapzule.skillstudio.domain.model.payload.Tekbyte;
 import lombok.*;
 
 import java.util.List;
-
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -53,6 +51,14 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     @DynamoDBAttribute(attributeName = "learningMode")
     @DynamoDBTypeConvertedEnum
     private LearningMode learningMode;
+    @DynamoDBAttribute(attributeName = "overview")
+    private Overview overview;
+    @DynamoDBAttribute(attributeName = "level")
+    @DynamoDBTypeConvertedEnum
+    private Level level;
+    @DynamoDBAttribute(attributeName = "targetAudience")
+    @DynamoDBTypeConvertedEnum
+    private TargetAudience targetAudience;
     @DynamoDBAttribute(attributeName = "schedule")
     private Schedule schedule;
     @DynamoDBAttribute(attributeName = "region")
@@ -64,7 +70,7 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private String registrationUrl;
     @DynamoDBAttribute(attributeName = "prizingModel")
     @DynamoDBTypeConvertedEnum
-    private PrizingModel prizingmodel;
+    private PrizingModel prizingModel;
     @DynamoDBAttribute(attributeName = "promotion")
     private Promotion promotion;
     @DynamoDBAttribute(attributeName = "recommendations")
@@ -72,9 +78,5 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     @DynamoDBAttribute(attributeName = "status")
     @DynamoDBTypeConvertedEnum
     private Status status;
-    @DynamoDBAttribute(attributeName = "tekbyte")
-    private Tekbyte tekbyte;
-    @DynamoDBAttribute(attributeName = "level")
-    private String level;
 }
 

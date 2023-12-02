@@ -15,22 +15,29 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
 public class UpdateCommand extends Command {
-    private String skillstudioId;
-    private String title;
+    private String learningMaterialId;
     private String topicCode;
-    private String author;
-    private String publisher;
-    private String duration;
-    private String resourceUrl;
+    private String subTopicCode;
+    private String title;
     private String summary;
     private String description;
+    private String publisher;
+    private String publishedOn;
+    private List<String> authors;
+    private List<String> tags;
+    private String duration;
+    private String resourceUrl;
+    private String imageUrl;
     private List<Module> modules;
-    private PrizingModel prizingModel;
     private DeliveryMode deliveryMode;
     private LearningMode learningMode;
-    private String imageUrl;
-    private int recommendations;
+    private Overview overview;
+    private Level level;
+    private TargetAudience targetAudience;
+    private Schedule schedule;
+    private Region region;
+    private String venue;
+    private String registrationUrl;
+    private PrizingModel prizingModel;
     private Promotion promotion;
-    private String publishedOn;
-
 }

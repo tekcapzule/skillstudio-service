@@ -41,7 +41,7 @@ public class CreateFunction implements Function<Message<CreateInput>, Message<Vo
 
         try {
             CreateInput createInput = createInputMessage.getPayload();
-            log.info(String.format("Entering create skillstudio Function - Module Code:%s", createInput.getTopicCode()));
+            log.info(String.format("Entering create skillStudio Function -  title:%s", createInput.getTitle()));
             Origin origin = HeaderUtil.buildOriginFromHeaders(createInputMessage.getHeaders());
             CreateCommand createCommand = InputOutputMapper.buildCreateCommandFromCreateInput.apply(createInput, origin);
             skillstudioService.create(createCommand);

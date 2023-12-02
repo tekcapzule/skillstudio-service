@@ -25,7 +25,7 @@ public class SkillStudioServiceImpl implements SkillStudioService {
     @Override
     public void create(CreateCommand createCommand) {
 
-        log.info(String.format("Entering create learningMaterial service - Module Code :%s", createCommand.getTopicCode()));
+        log.info(String.format("Entering create SkillStudio service - title :%s", createCommand.getTitle()));
 
         LearningMaterial learningMaterial = LearningMaterial.builder()
                 .title(createCommand.getTitle())
@@ -37,10 +37,9 @@ public class SkillStudioServiceImpl implements SkillStudioService {
                 .resourceUrl(createCommand.getResourceUrl())
                 .summary(createCommand.getSummary())
                 .description(createCommand.getDescription())
-                .prizingmodel(createCommand.getPrizingModel())
+                .prizingModel(createCommand.getPrizingModel())
                 .imageUrl(createCommand.getImageUrl())
                 .tags(createCommand.getTags())
-                .recommendations(createCommand.getRecommendations())
                 .promotion(createCommand.getPromotion())
                 .status(Status.SUBMITTED)
                 .publishedOn(createCommand.getPublishedOn())
@@ -55,9 +54,9 @@ public class SkillStudioServiceImpl implements SkillStudioService {
     @Override
     public void update(UpdateCommand updateCommand) {
 
-        log.info(String.format("Entering update learningMaterial service - LearningMaterial ID:%s", updateCommand.getSkillstudioId()));
+        log.info(String.format("Entering update SkillStudio service - LearningMaterial ID:%s", updateCommand.getLearningMaterialId()));
 
-        LearningMaterial learningMaterial = skillStudioRepository.findBy(updateCommand.getSkillstudioId());
+        LearningMaterial learningMaterial = skillStudioRepository.findBy(updateCommand.getLearningMaterialId());
         if (learningMaterial != null) {
             learningMaterial.setTitle(updateCommand.getTitle());
             learningMaterial.setTopicCode(updateCommand.getTopicCode());
@@ -70,7 +69,6 @@ public class SkillStudioServiceImpl implements SkillStudioService {
             learningMaterial.setImageUrl(updateCommand.getImageUrl());
             learningMaterial.setUpdatedOn(updateCommand.getExecOn());
             learningMaterial.setUpdatedBy(updateCommand.getExecBy().getUserId());
-            learningMaterial.setRecommendations(updateCommand.getRecommendations());
             learningMaterial.setPublishedOn(updateCommand.getPublishedOn());
             skillStudioRepository.save(learningMaterial);
         }
@@ -78,9 +76,9 @@ public class SkillStudioServiceImpl implements SkillStudioService {
 
     @Override
     public void recommend(RecommendCommand recommendCommand) {
-        log.info(String.format("Entering recommend learningMaterial service -  LearningMaterial Id:%s", recommendCommand.getSkillstudioId()));
+        log.info(String.format("Entering recommend SkillStudio service -  LearningMaterial Id:%s", recommendCommand.getLearningMaterialId()));
 
-        LearningMaterial learningMaterial = skillStudioRepository.findBy(recommendCommand.getSkillstudioId());
+        LearningMaterial learningMaterial = skillStudioRepository.findBy(recommendCommand.getLearningMaterialId());
         if (learningMaterial != null) {
             Integer recommendationsCount = learningMaterial.getRecommendations();
             recommendationsCount += 1;
@@ -95,9 +93,9 @@ public class SkillStudioServiceImpl implements SkillStudioService {
 
     @Override
     public void approve(ApproveCommand approveCommand) {
-        log.info(String.format("Entering approve learningMaterial service -  learningMaterial Id:%s", approveCommand.getSkillstudioId()));
+        log.info(String.format("Entering approve SkillStudio service -  learningMaterial Id:%s", approveCommand.getLearningMaterialId()));
 
-        LearningMaterial learningMaterial = skillStudioRepository.findBy(approveCommand.getSkillstudioId());
+        LearningMaterial learningMaterial = skillStudioRepository.findBy(approveCommand.getLearningMaterialId());
         if (learningMaterial != null) {
             learningMaterial.setStatus(Status.ACTIVE);
 
@@ -111,7 +109,7 @@ public class SkillStudioServiceImpl implements SkillStudioService {
     @Override
     public List<LearningMaterial> findAll() {
 
-        log.info("Entering findAll LearningMaterial service");
+        log.info("Entering findAll SkillStudio service");
 
         return skillStudioRepository.findAll();
     }
@@ -119,7 +117,7 @@ public class SkillStudioServiceImpl implements SkillStudioService {
     @Override
     public List<LearningMaterial> findAllByTopicCode(String topicCode) {
 
-        log.info(String.format("Entering findAllByTopicCode LearningMaterial service - Module code:%s", topicCode));
+        log.info(String.format("Entering findAllByTopicCode SkillStudio service - topic code:%s", topicCode));
 
         return skillStudioRepository.findAllByTopicCode(topicCode);
     }

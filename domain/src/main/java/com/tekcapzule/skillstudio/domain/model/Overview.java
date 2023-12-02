@@ -1,4 +1,4 @@
-package com.tekcapzule.skillstudio.domain.model.payload;
+package com.tekcapzule.skillstudio.domain.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @DynamoDBDocument
-public  class Tekbyte {
+public  class Overview {
     @DynamoDBAttribute(attributeName = "illustrationUrl")
     private String illustrationUrl;
     @DynamoDBAttribute(attributeName = "goldenCircle")

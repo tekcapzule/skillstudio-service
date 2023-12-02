@@ -41,7 +41,7 @@ public class RecommendFunction implements Function<Message<RecommendInput>, Mess
         String stage = appConfig.getStage().toUpperCase();
         try {
             RecommendInput recommendInput = recommendInputMessage.getPayload();
-            log.info(String.format("Entering recommend skillstudio Function -  LearningMaterial Id:%s", recommendInput.getSkillstudioId()));
+            log.info(String.format("Entering recommend skillStudio Function -  LearningMaterial Id:%s", recommendInput.getLearningMaterialId()));
             Origin origin = HeaderUtil.buildOriginFromHeaders(recommendInputMessage.getHeaders());
             RecommendCommand recommendCommand = InputOutputMapper.buildRecommendCommandFromRecommendInput.apply(recommendInput, origin);
             skillstudioService.recommend(recommendCommand);

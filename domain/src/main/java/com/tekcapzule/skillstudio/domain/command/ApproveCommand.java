@@ -10,5 +10,5 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
 public class ApproveCommand extends Command {
-    private String skillstudioId;
+    private String learningMaterialId;
 }

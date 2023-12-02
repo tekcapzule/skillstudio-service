@@ -36,15 +36,15 @@ public class GetFunction implements Function<Message<GetInput>, Message<List<Lea
     public Message<List<LearningMaterial>> apply(Message<GetInput> getInputMessage) {
 
         Map<String, Object> responseHeaders = new HashMap<>();
-        List<LearningMaterial> cours = new ArrayList<>();
+        List<LearningMaterial> learningMaterials = new ArrayList<>();
 
         String stage = appConfig.getStage().toUpperCase();
 
         try {
             GetInput getInput = getInputMessage.getPayload();
-            log.info(String.format("Entering get skillstudio Function -Module Code:%s", getInput.getTopicCode()));
-            cours = skillstudioService.findAllByTopicCode(getInput.getTopicCode());
-            if (cours.isEmpty()) {
+            log.info(String.format("Entering get skillStudio Function -  learning material Id:%s", getInput.getLearningMaterialId()));
+            learningMaterials = skillstudioService.findAllByTopicCode(getInput.getLearningMaterialId());
+            if (learningMaterials.isEmpty()) {
                 responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.NOT_FOUND);
             } else {
                 responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.SUCCESS);
@@ -53,6 +53,6 @@ public class GetFunction implements Function<Message<GetInput>, Message<List<Lea
             log.error(ex.getMessage());
             responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.ERROR);
         }
-        return new GenericMessage<>(cours, responseHeaders);
+        return new GenericMessage<>(learningMaterials, responseHeaders);
     }
 }

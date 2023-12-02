@@ -14,9 +14,7 @@ public interface SkillStudioService {
     void create(CreateCommand createCommand);
 
     void update(UpdateCommand updateCommand);
-
     List<LearningMaterial> findAll();
-
     List<LearningMaterial> findAllByTopicCode(String code);
     void recommend(RecommendCommand recommendCommand);
     void approve(ApproveCommand approveCommand);

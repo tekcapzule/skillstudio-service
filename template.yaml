@@ -57,30 +57,17 @@ Resources:
       AttributeDefinitions:
         - AttributeName: learningMaterialId
           AttributeType: S
-        - AttributeName: topicCode
-          AttributeType: S
         - AttributeName: status
           AttributeType: S
-        - AttributeName: recommendations
-          AttributeType: N
       KeySchema:
         - AttributeName: learningMaterialId
           KeyType: HASH
+        - AttributeName: status
+          KeyType: RANGE
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
-      GlobalSecondaryIndexes:
-        - IndexName: topicGSI
-          KeySchema:
-            - AttributeName: status
-              KeyType: HASH
-            - AttributeName: topicCode
-              KeyType: RANGE
-          Projection:
-            ProjectionType: ALL
-          ProvisionedThroughput:
-            ReadCapacityUnits: 1
-            WriteCapacityUnits: 1
+
   # Setup Lambda Functions
 
   CreateLearningMaterialFunction:

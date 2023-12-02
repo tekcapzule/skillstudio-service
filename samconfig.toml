@@ -2,9 +2,9 @@ version = 0.1
 [dev]
 [dev.deploy]
 [dev.deploy.parameters]
-stack_name = "dev-learningMaterial-service"
+stack_name = "dev-skillStudio-service"
 s3_bucket = "com.tekcapzule.api.deployment.dev"
-s3_prefix = "dev-learningMaterial-service"
+s3_prefix = "dev-skillStudio-service"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
@@ -14,9 +14,9 @@ image_repositories = []
 [prod]
 [prod.deploy]
 [prod.deploy.parameters]
-stack_name = "prod-learningMaterial-service"
+stack_name = "prod-skillStudio-service"
 s3_bucket = "com.tekcapzule.api.deployment.prod"
-s3_prefix = "prod-learningMaterial-service"
+s3_prefix = "prod-skillStudio-service"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"

@@ -12,6 +12,8 @@ import lombok.*;
 @DynamoDBDocument
 public class Promotion {
     private Boolean promoted;
+    private String title;
+    private String description;
     private String endsOnUtc;
     private String imageUrl;
     private String campaignUrl;

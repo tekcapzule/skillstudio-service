@@ -81,19 +81,6 @@ Resources:
           ProvisionedThroughput:
             ReadCapacityUnits: 1
             WriteCapacityUnits: 1
-
-        - IndexName: trendingGSI
-          KeySchema:
-            - AttributeName: status
-              KeyType: HASH
-            - AttributeName: recommendations
-              KeyType: RANGE
-          Projection:
-            ProjectionType: ALL
-          ProvisionedThroughput:
-            ReadCapacityUnits: 1
-            WriteCapacityUnits: 1
-
   # Setup Lambda Functions
 
   CreateSkillStudioFunction:
@@ -112,7 +99,7 @@ Resources:
         ApiEvent:
           Type: Api
           Properties:
-            Path: skillstudio/create
+            Path: learning-material/create
             Method: post
             RestApiId:
               Ref: SkillStudioApi
@@ -133,7 +120,7 @@ Resources:
         ApiEvent:
           Type: Api
           Properties:
-            Path: skillstudio/update
+            Path: learning-material/update
             Method: post
             RestApiId:
               Ref: SkillStudioApi
@@ -154,7 +141,7 @@ Resources:
         ApiEvent:
           Type: Api
           Properties:
-            Path: skillstudio/get
+            Path: learning-material/get
             Method: post
             RestApiId:
               Ref: SkillStudioApi
@@ -175,7 +162,7 @@ Resources:
         ApiEvent:
           Type: Api
           Properties:
-            Path: skillstudio/getAll
+            Path: learning-material/getAll
             Method: post
             RestApiId:
               Ref: SkillStudioApi
@@ -196,7 +183,7 @@ Resources:
         ApiEvent:
           Type: Api
           Properties:
-            Path: skillstudio/recommend
+            Path: learning-material/recommend
             Method: post
             RestApiId:
               Ref: SkillStudioApi
@@ -217,7 +204,7 @@ Resources:
         ApiEvent:
           Type: Api
           Properties:
-            Path: skillstudio/approve
+            Path: learning-material/approve
             Method: post
             RestApiId:
               Ref: SkillStudioApi

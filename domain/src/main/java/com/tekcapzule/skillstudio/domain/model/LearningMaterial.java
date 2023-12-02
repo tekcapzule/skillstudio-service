@@ -74,5 +74,7 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private Status status;
     @DynamoDBAttribute(attributeName = "tekbyte")
     private Tekbyte tekbyte;
+    @DynamoDBAttribute(attributeName = "level")
+    private String level;
 }
 

@@ -1,15 +1,17 @@
-package com.tekcapzule.skillstudio.domain.model.payload;
+package com.tekcapzule.skillstudio.domain.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @DynamoDBDocument
-public class ResearchPaper extends LearningData {
-
+public class Module {
+    private String title;
+    private int duration;
+    private String description;
 }
-

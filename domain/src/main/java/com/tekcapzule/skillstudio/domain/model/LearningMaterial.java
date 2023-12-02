@@ -4,8 +4,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapzule.core.domain.AggregateRoot;
 import com.tekcapzule.core.domain.BaseDomainEntity;
-import com.tekcapzule.skillstudio.domain.model.payload.LearningData;
-import com.tekcapzule.skillstudio.domain.model.payload.LearningGenericData;
+import com.tekcapzule.skillstudio.domain.model.payload.Tekbyte;
 import lombok.*;
 
 import java.util.List;
@@ -46,6 +45,23 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     private String resourceUrl;
     @DynamoDBAttribute(attributeName = "imageUrl")
     private String imageUrl;
+    @DynamoDBAttribute(attributeName = "modules")
+    private List<Module> modules;
+    @DynamoDBAttribute(attributeName = "deliveryMode")
+    @DynamoDBTypeConvertedEnum
+    private DeliveryMode deliveryMode;
+    @DynamoDBAttribute(attributeName = "learningMode")
+    @DynamoDBTypeConvertedEnum
+    private LearningMode learningMode;
+    @DynamoDBAttribute(attributeName = "schedule")
+    private Schedule schedule;
+    @DynamoDBAttribute(attributeName = "region")
+    @DynamoDBTypeConvertedEnum
+    private Region region;
+    @DynamoDBAttribute(attributeName = "venue")
+    private String venue;
+    @DynamoDBAttribute(attributeName = "registrationUrl")
+    private String registrationUrl;
     @DynamoDBAttribute(attributeName = "prizingModel")
     @DynamoDBTypeConvertedEnum
     private PrizingModel prizingmodel;
@@ -56,9 +72,7 @@ public class LearningMaterial extends BaseDomainEntity implements AggregateRoot 
     @DynamoDBAttribute(attributeName = "status")
     @DynamoDBTypeConvertedEnum
     private Status status;
-    //Add the correct type and need to bind the payload here...
-    @DynamoDBAttribute(attributeName = "payload")
-   // @DynamoDBTypeConverted(converter = PayloadConverter.class)
-    private LearningGenericData payload;
+    @DynamoDBAttribute(attributeName = "tekbyte")
+    private Tekbyte tekbyte;
 }
 

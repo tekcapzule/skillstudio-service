@@ -6,15 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="learningMaterial-domain" />
-        <module name="learningMaterial-service" />
+        <module name="skillstudio-domain" />
+        <module name="skillstudio-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="learningMaterial-application" target="1.5" />
+      <module name="learningMaterial-domain" target="11" />
+      <module name="learningMaterial-service" target="11" />
+      <module name="skillstudio-application" target="1.5" />
+      <module name="skillstudio-domain" target="11" />
+      <module name="skillstudio-service" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="learningMaterial-domain" options="-parameters" />
       <module name="learningMaterial-service" options="-parameters" />
+      <module name="skillstudio-domain" options="-parameters" />
+      <module name="skillstudio-service" options="-parameters" />
     </option>
   </component>
 </project>

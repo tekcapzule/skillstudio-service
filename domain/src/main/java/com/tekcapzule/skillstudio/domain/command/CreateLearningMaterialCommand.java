@@ -13,6 +13,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
 public class CreateLearningMaterialCommand extends Command {
+    private String learningMaterialType;
     private String topicCode;
     private String subTopicCode;
     private String title;
